@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Create new order",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "user_name": "Тестовый пользователь",
+        "user_phone": "+79001234567",
+        "total": 1500,
+        "items_count": 3,
+        "delivery_address": "ул. Тестовая, д. 1",
+        "items": [
+          {
+            "dish_id": 1,
+            "quantity": 2,
+            "price": 500
+          }
+        ]
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

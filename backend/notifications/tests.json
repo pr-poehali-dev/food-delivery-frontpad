@@ -1,0 +1,40 @@
+{
+  "tests": [
+    {
+      "name": "Process order status notification",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "type": "order_status_changed",
+        "data": {
+          "order_id": "123",
+          "status": "cooking",
+          "timestamp": "2026-01-15T12:00:00Z"
+        }
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "processed": 1
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Process menu update notification",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "type": "menu_updated",
+        "data": {
+          "updated_count": 5,
+          "timestamp": "2026-01-15T12:00:00Z"
+        }
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

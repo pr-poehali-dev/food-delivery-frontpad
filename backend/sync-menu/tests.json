@@ -1,0 +1,28 @@
+{
+  "tests": [
+    {
+      "name": "Sync dishes from Frontpad",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "dishes": [
+          {
+            "frontpad_id": "fp_001",
+            "name": "Тестовая пицца",
+            "description": "Тестовое описание",
+            "price": 500,
+            "category": "Пицца",
+            "rating": 4.5,
+            "available": true
+          }
+        ]
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true,
+        "updated": 1
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
